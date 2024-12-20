@@ -1,4 +1,4 @@
-const MAX_LEN = 50;
+const MAX_LEN = 5;
 
 export function generate() {
 	const subset = "123456789qwertyuiopasdfghjklzxcvbnm";

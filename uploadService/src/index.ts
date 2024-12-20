@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import simpleGit from "simple-git";
 import fs from "fs";
-import path from "path"
+import path, { resolve } from "path"
 import {createClient} from "redis";
 import { generate } from "./utils/generator";
 import { getAllFiles } from "./utils/file";
@@ -42,11 +42,13 @@ app.post("/deploy", async (req, res) => {
 
         for (const file of files) {
             const relativePath = path.relative(repoPath, file); 
-            const s3Key = `${id}/${relativePath}`; 
+            const s3Key = `output/${id}/${relativePath}`; 
             await uploadFile(s3Key, file);
             console.log(`Uploaded ${s3Key} to S3.`);
         }
         console.log(`Repository cloned and files uploaded to S3 with ID: ${id}`);
+        
+        await new Promise((resolve) => setTimeout(resolve, 5000));
 
         publisher.lPush("build-queue",id);
         res.json({ status: "success", id });
