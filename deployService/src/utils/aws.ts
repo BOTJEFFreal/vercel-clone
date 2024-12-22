@@ -57,11 +57,16 @@ export async function downloadS3Folder(prefix: string) {
 }
 
 export function copyFinalDist(id: string) {
-    const folderPath = path.join(__dirname, `output/${id}/build`);
+    const distFolderPath = path.join(__dirname, `output/${id}/dist`);
+    const buildFolderPath = path.join(__dirname, `output/${id}/build`);
+    
+    const folderPath = fs.existsSync(distFolderPath) ? distFolderPath : buildFolderPath;
+    
     const allFiles = getAllFiles(folderPath);
+    
     allFiles.forEach(file => {
         uploadFile(`dist/${id}/` + file.slice(folderPath.length + 1), file);
-    })
+    });
 }
 
 const getAllFiles = (folderPath: string) => {
@@ -86,12 +91,16 @@ const getAllFiles = (folderPath: string) => {
     return response;
 }
 
-const uploadFile = async (fileName: string, localFilePath: string) => {
+export const uploadFile = async (fileName: string, localFilePath: string) => {
     const fileContent = fs.readFileSync(localFilePath);
+
+    const fileKey = fileName.includes("/") ? fileName : `static/${fileName}`;
+
     const response = await s3.upload({
         Body: fileContent,
         Bucket: "vercelclonedummy",
-        Key: fileName,
+        Key: fileKey, 
     }).promise();
+    
     console.log(response);
 }

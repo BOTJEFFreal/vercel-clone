@@ -3,3 +3,4 @@ notes
 .env
 dist
 output
+build-server
