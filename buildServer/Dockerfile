@@ -13,7 +13,7 @@ WORKDIR /home/app
 COPY main.sh main.sh
 COPY src/main.js main.js
 COPY package*.json .
-# COPY .env .env
+COPY .env .env
 
 RUN npm install
 
