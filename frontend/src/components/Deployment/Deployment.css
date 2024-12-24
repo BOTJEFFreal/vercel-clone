@@ -1,0 +1,133 @@
+/* Deployment.css */
+.deployment{
+    border-top: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+    padding: 30px 10px;
+
+}
+.deployment-header{
+    font-family: monospace;
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    word-break: break-all;
+    margin-bottom: 5px;
+}
+.deployment-subheading{
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    word-break: break-all;
+    margin-bottom: 15px;
+}
+.deployment-subsection {
+    display: flex;
+    margin: 20px 30px;
+    
+    background: #0c0c0c;
+    color: #fff;
+    border: 1px dashed #555;
+    border-radius: 5px;
+  }
+  
+  .deployment-preview {
+    width: 50%;
+    padding: 20px;
+    border-right: 2px solid #2a2a2a;
+  }
+  
+  .deployment-data {
+    width: 50%;
+    padding: 20px 30px;
+  }
+  
+  .deployment-data h3 {
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-top: 25px;
+  }
+  
+  .deployment-url {
+    font-family: monospace;
+    font-size: 13px;
+    color: #fff;
+    word-break: break-all;
+  }
+  
+  .domain-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .domain-link a {
+    color: rgb(0, 112, 243);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: monospace;
+  }
+  
+  .badge {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  .deployment-sub-sections{
+    display: flex;
+    margin: 1rem 0rem;
+    gap: 40px;
+  }
+  .status-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: rgb(0, 255, 117);
+    border-radius: 50%;
+  }
+  
+  .status-text {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  /* Source section */
+  .source-info {
+    font-family: monospace;
+    font-size: 13px;
+  }
+  
+  .source-info > div {
+    margin: 5px 0;
+  }
+  
+  .commit-info {
+    color: #888;
+    margin-left: 10px;
+  }
+  
+  /* Fix specific text elements */
+  .deployment-status {
+    font-size: 14px;
+  }
+  
+  .deployment-createdAt,
+  .deployment-lastUpdate {
+    font-size: 14px;
+    color: #888;
+  }

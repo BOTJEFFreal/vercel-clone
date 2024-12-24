@@ -14,7 +14,7 @@ const s3Client = new S3Client({
   },
 });
 
-export const buildAndUpload = async () => {
+export const buildAndUpload = async (PROJECT_ID) => {
   console.log('Executing script.js');
   await logging('Executing script.js');
 
@@ -40,6 +40,7 @@ export const buildAndUpload = async () => {
   p.on('close', async function () {
     console.log('Build Complete');
     await logging('Build Complete');
+
 
     const distFolderPath = path.join(process.cwd(), 'output', 'dist');
     let distFolderContents;

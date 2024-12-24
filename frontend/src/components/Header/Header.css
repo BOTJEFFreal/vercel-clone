@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    padding: 0px 10px;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+.header-side-buttons{
+    display: flex;
+    vertical-align: middle;
+    margin: 20px 10px;
+    gap:20px;
+}
+.header-github-button {
+    /* max-height: 40px; */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.header-visit-button {
+    max-height: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:#fff ;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    
+
+}

@@ -10,4 +10,4 @@ const PROJECT_ID = process.env.PROJECT_ID;
 await connectToMongoDB();
 
 initLoggingModel(PROJECT_ID);
-buildAndUpload();
+buildAndUpload(PROJECT_ID);
