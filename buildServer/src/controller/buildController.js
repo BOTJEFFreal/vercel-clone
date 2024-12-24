@@ -14,14 +14,14 @@ const s3Client = new S3Client({
   },
 });
 
-export const buildAndUpload = async (PROJECT_ID) => {
+export const buildAndUpload = async () => {
   console.log('Executing script.js');
   await logging('Executing script.js');
 
   console.log('Build Started...');
   await logging('Build Started...');
   console.log('PROGRESS');
-  await projectStatusUpdate('PROGRESS',PROJECT_ID);
+  await projectStatusUpdate('PROGRESS');
 
   const outDirPath = path.join(process.cwd(), 'output');
   
@@ -49,7 +49,7 @@ export const buildAndUpload = async (PROJECT_ID) => {
     } catch (err) {
       console.error(`Error reading dist folder: ${err.message}`);
       await logging(`Error reading dist folder: ${err.message}`, true);
-      await projectStatusUpdate('FAIL',PROJECT_ID);
+      await projectStatusUpdate('FAIL');
       return;
     }
 
@@ -76,14 +76,14 @@ export const buildAndUpload = async (PROJECT_ID) => {
       } catch (err) {
         console.error(`Error uploading ${filePath}: ${err.message}`);
         await logging(`Error uploading ${filePath}: ${err.message}`, true);
-        await projectStatusUpdate('FAIL',PROJECT_ID);
+        await projectStatusUpdate('FAIL');
 
       }
     }
 
     console.log('Done...');
     await logging('Done...');
-    await projectStatusUpdate('READY',PROJECT_ID);
+    await projectStatusUpdate('READY');
 
   });
 };
