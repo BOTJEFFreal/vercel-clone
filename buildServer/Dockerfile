@@ -17,6 +17,8 @@ COPY .env .env
 
 RUN npm install
 
+COPY src/ /home/app/
+
 RUN chmod +x main.sh
 RUN chmod +x main.js
 
