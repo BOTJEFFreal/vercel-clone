@@ -1,11 +1,12 @@
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
+import EnterURL from './components/enterURL/enterURL';
+// import { useState } from 'react';
 import './index.css';
 
 const App = () => {
   return (
-    <div>
-      <Dashboard />
-    </div>
+  
+      <EnterURL/>
   );
 };
 
